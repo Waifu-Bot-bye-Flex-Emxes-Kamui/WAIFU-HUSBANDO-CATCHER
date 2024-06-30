@@ -53,3 +53,9 @@ async def fav_callback(update: Update, context: CallbackContext) -> None:
     await query.answer(text=f"{character['name']} has been added to your favorites.", show_alert=True)
 
     # ... potentially send a success message to the chat ...
+
+
+
+# ... other imports and function definitions ...
+
+application.add_handler(CommandHandler("fav", fav, block=False))
