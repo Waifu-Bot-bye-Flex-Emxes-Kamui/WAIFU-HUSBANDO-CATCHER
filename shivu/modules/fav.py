@@ -10,6 +10,8 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext, MessageHandler, filters
 
+from shivu import user_collection, collection, application, db
+
 # ... other imports and function definitions ...
 
 async def fav(update: Update, context: CallbackContext) -> None:
