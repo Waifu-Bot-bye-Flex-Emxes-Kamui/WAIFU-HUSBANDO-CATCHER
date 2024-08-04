@@ -67,13 +67,7 @@ async def fav_callback(update: Update, context: CallbackContext) -> None:
     character_name = next((c['name'] for c in user['characters'] if c['id'] == character_id), "Unknown")
     await query.edit_message_text(f"{character_name} has been added to your favorites!") 
 
-def main() -> None:
-    """Run bot."""
-    application.add_handler(CommandHandler(["guess", "protecc", "collect", "grab", "hunt"], guess, block=False))
-    application.add_handler(CommandHandler("fav", fav, block=False))
+ application.add_handler(CommandHandler("fav", fav, block=False))
     application.add_handler(CallbackQueryHandler(fav_callback, pattern=r'fav_(confirm|cancel)_.+')) # Add this line
 
-    application.run_polling()
-
-if __name__ == '__main__':
-    main()
+    
